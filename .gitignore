@@ -13,3 +13,17 @@ yarn-error.log
 .idea
 .vscode
 *.tmp
+.DS_Store
+Thumbs.db
+
+# Dynamic upload ignores (keep directories via .gitkeep)
+/public/uploads/ppdb/*
+!/public/uploads/ppdb/.gitkeep
+/public/images/berita/*
+!/public/images/berita/.gitkeep
+/public/images/pengumuman/*
+!/public/images/pengumuman/.gitkeep
+/public/images/jurusan/*
+!/public/images/jurusan/.gitkeep
+/public/images/guru/*
+!/public/images/guru/.gitkeep
