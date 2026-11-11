@@ -73,6 +73,46 @@
             </div>
         </div>
     </dir>
+    <!-- BERITA TERBARU SECTION -->
+    <div class="content-warp" style="background-color: #f7f9fb; padding: 40px 0;">
+        <div class="container clearfix">
+            <div class="heading-block center">
+                <h3>Warta &amp; Berita Terkini</h3>
+                <span>Informasi kegiatan, inovasi, dan prestasi SMKN 1 Padaherang</span>
+            </div>
+            <div class="row">
+                @forelse($artikels as $art)
+                <div class="col-md-3 col-sm-6 bottommargin-sm">
+                    <div class="ipost clearfix" style="background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); height: 100%;">
+                        <div class="entry-image" style="margin-bottom: 12px;">
+                            <a href="{{route('berita.detail', $art->slug)}}">
+                                <img class="image_fade" src="{{$art->getThumbnail()}}" alt="{{$art->judul}}" style="height: 160px; width: 100%; object-fit: cover;">
+                            </a>
+                        </div>
+                        <div style="padding: 0 15px 15px 15px;">
+                            <span class="badge badge-primary" style="margin-bottom: 6px;">{{$art->kategori ? $art->kategori->nama_kategori : 'Umum'}}</span>
+                            <div class="entry-title" style="margin-bottom: 8px;">
+                                <h5 style="margin: 0; font-size: 15px; line-height: 1.4;"><a href="{{route('berita.detail', $art->slug)}}">{{Str::limit($art->judul, 50)}}</a></h5>
+                            </div>
+                            <ul class="entry-meta" style="margin-bottom: 8px; font-size: 11px; color: #888;">
+                                <li><i class="icon-calendar3"></i> {{$art->published_at ? $art->published_at->format('d M Y') : $art->created_at->format('d M Y')}}</li>
+                            </ul>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 0;">{!! Str::limit(strip_tags($art->konten), 70) !!}</p>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-12 text-center text-muted">
+                    <p>Belum ada warta terbaru yang dipublikasikan.</p>
+                </div>
+                @endforelse
+            </div>
+            <div class="text-center topmargin-sm">
+                <a href="/berita" class="button button-rounded button-blue">Lihat Semua Berita &rarr;</a>
+            </div>
+        </div>
+    </div>
+
     <div class="content-warp">
         <div class="container clearfix">
             <div class="heading-block topmargin-sm center">
@@ -215,6 +255,46 @@
         </div>
     </div>
 
+    <!-- BERITA TERBARU SECTION -->
+    <div class="content-warp" style="background-color: #f7f9fb; padding: 40px 0;">
+        <div class="container clearfix">
+            <div class="heading-block center">
+                <h3>Warta &amp; Berita Terkini</h3>
+                <span>Informasi kegiatan, inovasi, dan prestasi SMKN 1 Padaherang</span>
+            </div>
+            <div class="row">
+                @forelse($artikels as $art)
+                <div class="col-md-3 col-sm-6 bottommargin-sm">
+                    <div class="ipost clearfix" style="background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); height: 100%;">
+                        <div class="entry-image" style="margin-bottom: 12px;">
+                            <a href="{{route('berita.detail', $art->slug)}}">
+                                <img class="image_fade" src="{{$art->getThumbnail()}}" alt="{{$art->judul}}" style="height: 160px; width: 100%; object-fit: cover;">
+                            </a>
+                        </div>
+                        <div style="padding: 0 15px 15px 15px;">
+                            <span class="badge badge-primary" style="margin-bottom: 6px;">{{$art->kategori ? $art->kategori->nama_kategori : 'Umum'}}</span>
+                            <div class="entry-title" style="margin-bottom: 8px;">
+                                <h5 style="margin: 0; font-size: 15px; line-height: 1.4;"><a href="{{route('berita.detail', $art->slug)}}">{{Str::limit($art->judul, 50)}}</a></h5>
+                            </div>
+                            <ul class="entry-meta" style="margin-bottom: 8px; font-size: 11px; color: #888;">
+                                <li><i class="icon-calendar3"></i> {{$art->published_at ? $art->published_at->format('d M Y') : $art->created_at->format('d M Y')}}</li>
+                            </ul>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 0;">{!! Str::limit(strip_tags($art->konten), 70) !!}</p>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-12 text-center text-muted">
+                    <p>Belum ada warta terbaru yang dipublikasikan.</p>
+                </div>
+                @endforelse
+            </div>
+            <div class="text-center topmargin-sm">
+                <a href="/berita" class="button button-rounded button-blue">Lihat Semua Berita &rarr;</a>
+            </div>
+        </div>
+    </div>
+
     <div class="content-warp">
         <div class="container clearfix">
             <div data-animate="fadeIn" class="postcontent nobottommargin clearfix">
@@ -281,52 +361,32 @@
             <div class="sidebar nobottommargin col_last clearfix">
                 <div data-animate="fadeInRight" class="sidebar-widgets-wrap">
                     <div class="widget clearfix">
-                        <h4>Upcoming Events</h4>
+                        <h4>Pengumuman Terbaru</h4>
                         <div id="post-list-footer">
-
+                            @forelse($pengumumans as $p)
                             <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="#" class="nobg"><img src="images/events/thumbs/1.jpg" alt=""></a>
-                                </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                        <h4>
+                                            <a href="{{route('pengumuman.detail', $p->slug)}}">{{$p->judul}}</a>
+                                            @if($p->is_urgent)
+                                                <span class="badge badge-danger">Penting</span>
+                                            @endif
+                                        </h4>
                                     </div>
                                     <ul class="entry-meta">
-                                        <li>10th July 2014</li>
+                                        <li><i class="icon-calendar3"></i> {{$p->created_at->format('d M Y')}}</li>
                                     </ul>
                                 </div>
                             </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="#" class="nobg"><img src="images/events/thumbs/2.jpg" alt=""></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li>10th July 2014</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="#" class="nobg"><img src="images/events/thumbs/3.jpg" alt=""></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li>10th July 2014</li>
-                                    </ul>
-                                </div>
+                            @empty
+                            <p class="text-muted">Tidak ada pengumuman baru.</p>
+                            @endforelse
+                            <div class="topmargin-xs">
+                                <a href="/pengumuman" class="btn btn-outline-primary btn-sm btn-block">Lihat Semua Pengumuman &rarr;</a>
                             </div>
                         </div>	
-                </div>
+                    </div>
                 
                 <div class="widget quick-contact-widget clearfix">
                     <h4>Quick Contact</h4>

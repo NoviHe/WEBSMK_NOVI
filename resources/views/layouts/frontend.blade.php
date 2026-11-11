@@ -85,10 +85,17 @@
 							</li>
 							<li><a href="#"><div>GTK &amp; Siswa</div></a>
 								<ul>
-									<li><a href="data-guru.html"><div>Data Guru</div></a></li>
-									<li><a href="administrasi.html"><div>Tenaga Administrasi</div></a></li>
+									<li><a href="/dataGuru"><div>Data Guru</div></a></li>
 									<li><a href="/dataSiswa"><div>Data Siswa</div></a></li>
-									<li><a href="data-alumni"><div>Data Alumni</div></a></li>
+								</ul>
+							</li>
+							<li><a href="/berita"><div>Berita</div></a></li>
+							<li><a href="/pengumuman"><div>Pengumuman</div></a></li>
+							<li><a href="/ppdb" style="color: #f39c12 !important; font-weight: bold;"><div>PPDB Online</div></a>
+								<ul>
+									<li><a href="/ppdb"><div>Informasi &amp; Alur</div></a></li>
+									<li><a href="/ppdb/daftar"><div>Formulir Pendaftaran</div></a></li>
+									<li><a href="/ppdb/cek-status"><div>Cek Status &amp; Cetak Bukti</div></a></li>
 								</ul>
 							</li>
 							<li><a href="#"><div>Layanan Aplikasi</div></a>

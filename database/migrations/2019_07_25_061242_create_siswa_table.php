@@ -20,6 +20,7 @@ class CreateSiswaTable extends Migration
             $table->string('jenis_kelamin');
             $table->string('kelas');
             $table->string('komp_keahlian');
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
